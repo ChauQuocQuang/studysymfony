@@ -1,0 +1,4 @@
+app_blogcomment:
+    resource: "@AppBundle/Resources/config/routing/blogcomment.yml"
+    prefix:   /blogcomment
+
