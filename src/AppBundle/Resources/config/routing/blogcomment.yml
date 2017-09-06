@@ -14,11 +14,11 @@ blogcomment_new:
     methods:  [GET, POST]
 
 blogcomment_edit:
-    path:     /{id}/edit
+    path:     /{id}/edit/
     defaults: { _controller: "AppBundle:BlogComment:edit" }
     methods:  [GET, POST]
 
 blogcomment_delete:
-    path:     /{id}/delete
+    path:     /{id}/delete/
     defaults: { _controller: "AppBundle:BlogComment:delete" }
     methods:  DELETE

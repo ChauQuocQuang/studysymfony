@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Plscourses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Courseversion</th>
+                <th>Coursecode</th>
+                <th>Coursename</th>
+                <th>Coursecatid</th>
+                <th>Mandatory</th>
+                <th>Startdate</th>
+                <th>Enddate</th>
+                <th>Intruduce</th>
+                <th>Description</th>
+                <th>Trainerid</th>
+                <th>Createddate</th>
+                <th>Createdby</th>
+                <th>Status</th>
+                <th>Approve</th>
+                <th>Hotcourse</th>
+                <th>Traineecount</th>
+                <th>Lecturecount</th>
+                <th>Companycode</th>
+                <th>Avatar</th>
+                <th>Rankcode</th>
+                <th>Regioncode</th>
+                <th>Public</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for plsCourse in plsCourses %}
+            <tr>
+                <td><a href="{{ path('plscourse_show', { 'id': plsCourse.id }) }}">{{ plsCourse.courseVersion }}</a></td>
+                <td>{{ plsCourse.courseCode }}</td>
+                <td>{{ plsCourse.courseName }}</td>
+                <td>{{ plsCourse.courseCatId }}</td>
+                <td>{{ plsCourse.mandatory }}</td>
+                <td>{% if plsCourse.startDate %}{{ plsCourse.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if plsCourse.endDate %}{{ plsCourse.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ plsCourse.intruduce }}</td>
+                <td>{{ plsCourse.description }}</td>
+                <td>{{ plsCourse.trainerId }}</td>
+                <td>{% if plsCourse.createdDate %}{{ plsCourse.createdDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ plsCourse.createdBy }}</td>
+                <td>{{ plsCourse.status }}</td>
+                <td>{% if plsCourse.approve %}Yes{% else %}No{% endif %}</td>
+                <td>{% if plsCourse.hotCourse %}Yes{% else %}No{% endif %}</td>
+                <td>{{ plsCourse.traineeCount }}</td>
+                <td>{{ plsCourse.lectureCount }}</td>
+                <td>{{ plsCourse.companyCode }}</td>
+                <td>{{ plsCourse.avatar }}</td>
+                <td>{{ plsCourse.rankCode }}</td>
+                <td>{{ plsCourse.regionCode }}</td>
+                <td>{{ plsCourse.public }}</td>
+                <td>{{ plsCourse.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('plscourse_show', { 'id': plsCourse.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('plscourse_edit', { 'id': plsCourse.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('plscourse_new') }}">Create a new plsCourse</a>
+        </li>
+    </ul>
+{% endblock %}

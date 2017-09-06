@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Plscourse</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Courseversion</th>
+                <td>{{ plsCourse.courseVersion }}</td>
+            </tr>
+            <tr>
+                <th>Coursecode</th>
+                <td>{{ plsCourse.courseCode }}</td>
+            </tr>
+            <tr>
+                <th>Coursename</th>
+                <td>{{ plsCourse.courseName }}</td>
+            </tr>
+            <tr>
+                <th>Coursecatid</th>
+                <td>{{ plsCourse.courseCatId }}</td>
+            </tr>
+            <tr>
+                <th>Mandatory</th>
+                <td>{{ plsCourse.mandatory }}</td>
+            </tr>
+            <tr>
+                <th>Startdate</th>
+                <td>{% if plsCourse.startDate %}{{ plsCourse.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Enddate</th>
+                <td>{% if plsCourse.endDate %}{{ plsCourse.endDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Intruduce</th>
+                <td>{{ plsCourse.intruduce }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ plsCourse.description }}</td>
+            </tr>
+            <tr>
+                <th>Trainerid</th>
+                <td>{{ plsCourse.trainerId }}</td>
+            </tr>
+            <tr>
+                <th>Createddate</th>
+                <td>{% if plsCourse.createdDate %}{{ plsCourse.createdDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Createdby</th>
+                <td>{{ plsCourse.createdBy }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ plsCourse.status }}</td>
+            </tr>
+            <tr>
+                <th>Approve</th>
+                <td>{% if plsCourse.approve %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Hotcourse</th>
+                <td>{% if plsCourse.hotCourse %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Traineecount</th>
+                <td>{{ plsCourse.traineeCount }}</td>
+            </tr>
+            <tr>
+                <th>Lecturecount</th>
+                <td>{{ plsCourse.lectureCount }}</td>
+            </tr>
+            <tr>
+                <th>Companycode</th>
+                <td>{{ plsCourse.companyCode }}</td>
+            </tr>
+            <tr>
+                <th>Avatar</th>
+                <td>{{ plsCourse.avatar }}</td>
+            </tr>
+            <tr>
+                <th>Rankcode</th>
+                <td>{{ plsCourse.rankCode }}</td>
+            </tr>
+            <tr>
+                <th>Regioncode</th>
+                <td>{{ plsCourse.regionCode }}</td>
+            </tr>
+            <tr>
+                <th>Public</th>
+                <td>{{ plsCourse.public }}</td>
+            </tr>
+            <tr>
+                <th>Id</th>
+                <td>{{ plsCourse.id }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('plscourse_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('plscourse_edit', { 'id': plsCourse.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -18,6 +18,7 @@ class BlogCommentController extends Controller
      */
     public function indexAction()
     {
+       
         $em = $this->getDoctrine()->getManager();
 
         $blogComments = $em->getRepository('AppBundle:BlogComment')->findAll();
@@ -34,6 +35,7 @@ class BlogCommentController extends Controller
     public function newAction(Request $request)
     {
         $blogComment = new Blogcomment();
+
         $form = $this->createForm('AppBundle\Form\BlogCommentType', $blogComment);
         $form->handleRequest($request);
 

@@ -2,3 +2,14 @@ app:
     resource: '@AppBundle/Controller/'
     type: annotation
 
+quocquang:
+    path: /quocquang/
+    defaults: { _controller: AppBundle:QuocQuang:index }
+
+blogcomment123_blogcomment:
+    resource: "@AppBundle/Resources/config/routing/blogcomment.yml"
+    prefix:   /app_blogcomment/
+
+app_plscourse:
+    resource: "@AppBundle/Resources/config/routing/plscourse.yml"
+    prefix:   /plscourse123/
