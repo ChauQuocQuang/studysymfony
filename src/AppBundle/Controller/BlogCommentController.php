@@ -40,6 +40,7 @@ class BlogCommentController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+             //print_r($form);die;
             $em = $this->getDoctrine()->getManager();
             $em->persist($blogComment);
             $em->flush();

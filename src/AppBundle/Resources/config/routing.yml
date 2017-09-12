@@ -4,3 +4,6 @@ app_blogcomment:
 app_plscourse:
         resource: "@AppBundle/Resources/config/routing/plscourse.yml"
         prefix:   /
+app_blogpost : 
+    resource : "@AppBundle/Resources/config/routing/blogpost.php"
+    prefix : /

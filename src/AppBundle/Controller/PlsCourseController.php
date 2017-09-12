@@ -18,7 +18,7 @@ class PlsCourseController extends Controller
      */
     public function indexAction()
     {
-         echo "abc";die;
+        //echo "abc";die;
         $em = $this->getDoctrine()->getManager();
 
         $plsCourses = $em->getRepository('AppBundle:PlsCourse')->findAll();

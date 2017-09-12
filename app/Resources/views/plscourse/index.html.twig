@@ -1,9 +1,12 @@
 {% extends 'base.html.twig' %}
-
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="http://www.peoplelinkvietnam.com/onlinetraining/assets/5358c4e6/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/datatables_qq/dataTables.bootstrap.min.css">
+{% endblock %}
 {% block body %}
     <h1>Plscourses list</h1>
 
-    <table>
+    <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
         <thead>
             <tr>
                 <th>Courseversion</th>
@@ -78,4 +81,27 @@
             <a href="{{ path('plscourse_new') }}">Create a new plsCourse</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/assets/5358c4e6/js/bootstrap.min.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/jquery.dataTables.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/dataTables.bootstrap.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/datatables_qq/dataTables.select.min.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/datatables_qq/dataTables.buttons.min.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/datatables_qq/jszip.min.js"></script>
+    <script src="http://www.peoplelinkvietnam.com/onlinetraining/webRTC/exportexcel/datatables_qq/buttons.html5.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            dom: 'Bfrtip',
+            buttons: [
+                'excel'
+            ],
+            "scrollX": true,
+
+        } );
+        $('.buttons-excel').addClass('btn btn-info');
+    });
+    </script>
 {% endblock %}

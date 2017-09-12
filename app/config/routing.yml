@@ -13,3 +13,7 @@ blogcomment123_blogcomment:
 app_plscourse:
     resource: "@AppBundle/Resources/config/routing/plscourse.yml"
     prefix:   /plscourse123/
+
+app_blogpost_blog : 
+    resource : "@AppBundle/Resources/config/routing/blogpost.php"
+    prefix : /app_blogpost/
